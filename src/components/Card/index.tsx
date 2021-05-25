@@ -8,15 +8,19 @@ interface Style {
 const cardStyles = StyleSheet.create<Style>({
     container: {
         backgroundColor: '#ffffff',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        borderRadius: 24,
+        borderWidth: 0.5,
+        borderColor: '#d7d7d7'
     }
 }) 
 
 interface CardProp {
     children: ReactNode
+    style: ViewStyle
 }
-const Card = ({children}: CardProp) => (
-    <View style={cardStyles.container}>
+const Card = ({style, children}: CardProp) => (
+    <View style={{...cardStyles.container, ...style}}>
         {children}
     </View>
 )

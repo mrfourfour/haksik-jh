@@ -9,17 +9,22 @@ interface TicketProps {
 }
 
 interface Styles {
-    image: ImageStyle
+    image: ImageStyle,
+    card: ViewStyle
 }
+
 const styles = StyleSheet.create<Styles>({
     image: {
         flex: 1,
         resizeMode: 'center' 
-    } 
+    },
+    card: {
+
+    }
 })
 
 const Ticket = ({name, qr}: TicketProps) => (
-    <Card>
+    <Card style={styles.card}>
         <QRCode value={qr} />
         <Text>{name}</Text>
     </Card>
