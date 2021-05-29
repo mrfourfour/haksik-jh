@@ -18,7 +18,6 @@ interface Style {
 
 const styles = StyleSheet.create<Style>({
     container: {
-        backgroundColor: '#ff7777'
     }
 })
 
