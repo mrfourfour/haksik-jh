@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Dimensions } from 'react-native'
+import { Dimensions, SafeAreaView } from 'react-native'
 import Carousel from '../../components/Carousel';
 import Ticket from '../../components/Ticket';
 
@@ -46,14 +46,16 @@ const renderItem = ({item, index}: TicketRenderItemType) => <Ticket key={index.t
 
 function TicketPage() {
     return (
-        <Carousel<Ticket>
-            items={tickets}
-            renderItem={renderItem}
-            keyExtractor={(item, index) => index + item.name}
-            gap={gap}
-            offset={offset}
-            itemWidth ={itemWidth}
-        />
+        <SafeAreaView style={{flex: 1}}>
+            <Carousel<Ticket>
+                items={tickets}
+                renderItem={renderItem}
+                keyExtractor={(item, index) => index + item.name}
+                gap={gap}
+                offset={offset}
+                itemWidth ={itemWidth}
+            />
+        </SafeAreaView>
     )
 }
 
